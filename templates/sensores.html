@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+
+{% block tabla %}
+ <main>
+    <div class="container-fluid px-4">
+
+        <h1 class="mt-4 text-muted">Estado de Sensores</h1>
+
+
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Visualización de Sensores</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fas fa-check-double"></i>
+                Consulta de Sensores
+            </div>
+            <div class="card-body"> <!--aqui borrar-->
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr class="bg-success">
+                            <th>Entrada a la Sala de Computo</th>
+                            <th>Estado de la Sala de Computo</th>
+                            <th>Fecha y Hora</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!-- aca colocaremos los datos de firebase-->
+                    {% for datos_sensores in elemento_sensores %}
+                        <tr>
+                            <td>{{ datos_sensores.Aula_Entrada }}</td>
+                            <td>{{ datos_sensores.Aula_Sala }}</td>
+                            <td>{{ datos_sensores.fechaHora }}</td>
+
+                    {%endfor%}
+
+
+                    </tbody>
+
+                </table>
+            </div><!--hasta aqui los datos-->
+        </div>
+    </div>
+ </main>
+
+
+
+     <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+
+    <script src="/static/js/eliminar.js"></script>
+{% endblock %}

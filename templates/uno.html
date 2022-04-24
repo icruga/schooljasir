@@ -1,0 +1,74 @@
+{% extends 'base.html'%}
+
+{% block tabla %}
+ <main>
+    <div class="container-fluid px-4">
+         <h1 class="mt-4 text-muted">Horario de Clases</h1>
+
+
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Salones Asignados</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa fa-eye"></i>
+                Consulta de Registros
+            </div>
+            <div class="card-body"> <!--aqui borrar-->
+                <table id="datatablesSimple">
+                    <thead>
+                    <tr class="bg-dark text-light font-weight-light my-4">
+                            <th>Hora</th>
+                            <th>Nombre del Docente</th>
+                            <th>Carrera</th>
+                            <th>Materia</th>
+                            <th>Grado y Grupo</th>
+                            <th>Número de aula</th>
+                            <th>dia</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!-- aca colocaremos los datos de firebase-->
+                    {% set contador=namespace(value=0) %}
+                    {% for datos in lista_personas %}
+                        <tr>
+                            <td>{{ datos.hora }}</td>
+                            <td>{{ datos.nombre }}</td>
+                            <td>{{ datos.carrera }}</td>
+                            <td>{{ datos.materia }}</td>
+                            <td>{{ datos.grad }}</td>
+                            <td>{{ datos.aula }}</td>
+                            <td>{{ datos.dia }}</td>
+
+                            <td>
+
+                                <a class="dltBtn btn btn-danger" data-id="{{ lista_indice_final[contador.value] }}" href="javascript:void(0)">Eliminar</a>
+                                <a class="actualizar btn btn-success" data-id="{{ lista_indice_final[contador.value] }}" href="javascript:void(0)">Actualizar</a>
+                            </td>
+                        </tr>
+                        {% set contador.value=contador.value +1 %}
+                    {%endfor%}
+
+
+                    </tbody>
+
+                </table>
+            </div><!--hasta aqui los datos-->
+        </div>
+    </div>
+ </main>
+
+
+{% endblock %}
+
+{% block eliminar_ventana %}
+     <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+
+    <script src="/static/js/eliminar.js"></script>
+{% endblock %}

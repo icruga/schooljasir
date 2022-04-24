@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block titulo %}
+        <title>politica</title>
+{% endblock %}
+
+
+{% block tabla %}
+<main>
+    <div class="container">
+        <div class="row justify-content-left">
+            <div class="col-lg-7">
+                <br>
+                <a class="btn btn-outline-danger" href="{{url_for('hello_world')}}"> Regresar anterior</a>
+                <br>
+            </div>
+        </div>
+    </div>
+     <div align="center"><img src="/static/img/q.png" class="img-fluid" alt="400" width="400"></div>
+
+    <section class="container"><!--Inicia los textos-->
+            <hr>
+            <div class="row">
+                <div align="center" >
+                <div class="col-sm-12 col-md-5 col-lg-8">
+                    <p>Jasir School es un Equipo de programadores que se dedico a crear una página web, aplicación móvil e implemento sensores, para facilitar el trabajo al área de Administración, ya que será más fácil asignar el horario de clases para cada docente. cada docente contara con un usuario y contraseña, donde podrán entrar a la aplicación móvil y visualizar su horario de clases.</p>
+                </div>
+                </div>
+    </section>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

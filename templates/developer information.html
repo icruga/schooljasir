@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block titulo %}
+        <title>developer information</title>
+{% endblock %}
+
+
+{% block tabla %}
+<main>
+    <div class="container">
+        <div class="row justify-content-left">
+            <div class="col-lg-7">
+                <br>
+                <a class="btn btn-outline-danger" href="{{url_for('hello_world')}}"> Regresar anterior</a>
+                <br>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<section class="container">
+            <br>
+           <h2 class="text-center mt-4 text-muted">Programadores Web</h2>
+
+           <!--pasarlo a una fila-->
+           <div class="row">
+            <div class="card" style="width: 15rem;">
+                <img src="/static/img/i.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="mt-4 text-muted">Programador Web</h3>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Ignacio Cruga </li>
+                    </ol>
+                </div>
+              </div>
+
+
+               <div class="card" style="width: 15rem;">
+                <img src="/static/img/r.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="mt-4 text-muted">Programador Web</h3>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Rosa Gonzales </li>
+                    </ol>
+                </div>
+              </div>
+
+               <div class="card" style="width: 15rem;">
+                <img src="/static/img/s.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="mt-4 text-muted">Programador Móvil</h3>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Sander Roldan </li>
+                    </ol>
+                </div>
+              </div>
+
+               <div class="card" style="width: 15rem;">
+                <img src="/static/img/j.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="mt-4 text-muted">Programador Iot</h3>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Jorge </li>
+                    </ol>
+                </div>
+              </div>
+
+               <div class="card" style="width: 15rem;">
+                <img src="/static/img/a.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="mt-4 text-muted">Programador Iot</h3>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Adan </li>
+                    </ol>
+                </div>
+              </div>
+
+
+
+           </div>
+
+
+
+
+
+    </section>
+
+{% endblock %}

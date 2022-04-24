@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block titulo %}
+        <title>Modificación del personal</title>
+{% endblock %}
+
+
+{% block tabla %}
+  <main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header bg-warning"><h3 class="text-center font-weight-light my-4">Modificación del personal</h3></div>
+                    <div class="card-body">
+                        <form method="post" action="{{ url_for('update_persona')}}">
+                            <!-- Id oculto-->
+                            <input type="hidden" name="id" value="{{id_persona}}">
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="hora" name="hora" type="text" value="{{lista.hora}}" />
+                                        <label for="inputFirstName">Hora</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="nombre" name="nombre" type="text" value="{{lista.nombre}}" />
+                                        <label for="inputLastName">Nombre del Docente</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="carrera" name="carrera" type="text" value="{{lista.carrera}}" />
+                                        <label for="inputPassword">Carrera</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="materia" name="materia" type="texto" value="{{lista.materia}}" />
+                                        <label for="inputPasswordConfirm">Materia</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="grad" name="grad" type="text" value="{{lista.grad}}" />
+                                        <label for="inputPassword">Grado y Grupo</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="aula" name="aula" type="number" value="{{lista.aula}}" />
+                                        <label for="inputPasswordConfirm">Número de Aula</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="dia" name="dia" type="text" value="{{lista.dia}}" />
+                                        <label for="inputPassword">dia</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-4 mb-0">
+                                <button class="btn-warning">Actualizar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center py-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+
+{% endblock %}

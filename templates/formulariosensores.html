@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block titulo %}
+        <title> Registros de Personal</title>
+{% endblock %}
+
+
+{% block tabla %}
+  <main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <br>
+                <a class="btn btn-outline-danger" href="{{url_for('sensores')}}"> Regresar anterior</a>
+                <br>
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Registros de Personal</h3></div>
+                    <div class="card-body">
+                        <form method="post" action="{{url_for('save_data_sensors')}}">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="Aula_Entrada" name="Aula_Entrada" type="text" placeholder="Enter your first name" />
+                                        <label for="inputFirstName">Aula</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="Aula_Sala" name="Aula_Sala" type="text" placeholder="Enter your last name" />
+                                        <label for="inputLastName">Aula Sala</label>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="fechaHora" name="fechaHora" type="date" placeholder="Enter your last name" />
+                                        <label for="inputLastName">Fecha y Hora</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 mb-0">
+                                <button class="btn-success">Registrar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center py-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+
+{% endblock %}
